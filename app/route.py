@@ -84,8 +84,8 @@ def test():
 #----------------------------------------------------------------
 # AVATAR
 #----------------------------------------------------------------    
-@app.route('/avatar', methods=['GET', 'POST'])  
-def avatar():
+@app.route('/avis', methods=['GET', 'POST'])  
+def avis():
 
     if request.method == "GET":
         try:
@@ -96,10 +96,10 @@ def avatar():
                 nb_comment=i[0]
             print(nb_comment)
             result_select = Allo_Cine.affich()
-            return render_template('avatar.html', commentaires=result_select,nb_comment=nb_comment)
+            return render_template('avis.html', commentaires=result_select,nb_comment=nb_comment)
     
         except mysql.connector.Error as e:
-            return render_template('avatar.html')
+            return render_template('avis.html')
 
 
           
