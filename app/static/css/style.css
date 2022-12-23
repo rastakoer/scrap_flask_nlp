@@ -64,3 +64,8 @@ body {
     height: auto;
     margin-top: 2em;
 }
+
+#image_acceuil {
+    margin: 0 auto;
+    width: 90vw;
+}
