@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 align="center" class="titre"><b><i>Testez votre commentaire :</i></b></h1>
+<div align="center">
+
+      <form id="predict" method="post">
+          <div class="form-group">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="phrase"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      {% if predict ==1 %}
+      <div>                           
+        <img class="image_pouce" src="{{ url_for('static', filename='images/p__words_vert.png') }}" alt="pouce vert"/>
+      </div>   
+      {% else %}
+      <div> 
+        <img class="image_pouce" src="{{ url_for('static', filename='images/p__words_rouge.png')}}" alt="pouce rouge" />
+      </div>   
+      {% endif %}
+</div>
+
+{% endblock %}

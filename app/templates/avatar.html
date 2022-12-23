@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div align="center">
+<h1 class="titre"><b><i>Scrapping des avis du film<br> SONIC 2 et INCEPTION</i></b></h1>
+<h2>Il y a {{ nb_comment }} commentaires en base de données</h2>
+<h2 style="color:red;">{{ error }}</h2>
+</div>
+
+<div class="container container-main">
+
+    <table class="table" sytle="width: fit-content; overflow: scroll;">
+        <thead>
+            <tr class="titre tableau" >
+                <th scope="col">ID</th>
+                <th scope="col">commentaire</th>
+                <th scope="col">note</th>
+                <th scope="col">avis</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for comment in commentaires %}
+                    <tr>
+                        <th scope="row">{{ comment[0] }}</th>
+                        <td id="JB">{{ comment[1] }}</td>
+                        <td>{{ comment[2] }}</td>
+                        {% if comment[2] >3 %}
+                            
+                            <td><img src="{{ url_for('static', filename='images/p_vert.png') }}" alt="pouce vert" width="30"/></td>
+                            
+                        {% else %}
+                            
+                            <td><img src="{{ url_for('static', filename='images/p_rouge.png')}}" alt="pouce rouge" width="35"/></td>
+                            
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

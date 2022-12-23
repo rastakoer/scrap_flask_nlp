@@ -1,0 +1,66 @@
+/*
+    classe = . 
+    id = #
+*/
+
+body {
+    background-image: url("https://i1.sndcdn.com/avatars-000642091035-94htfd-t500x500.jpg");
+    background-size: cover
+    }
+
+.info
+{
+    background-color: rgb(153, 165, 42);
+}
+
+.titre
+{
+    text-transform: uppercase;
+    color:blue;
+}
+
+.tableau
+{
+    color:yellow;
+}
+
+#first_user
+{
+    color: rgb(179, 52, 73);
+}
+
+#second_user
+{
+    color: rgb(45, 148, 45);
+}
+
+.inner-div {
+    margin: 0 auto;
+    width: 100px;
+} 
+
+.container-main{
+    margin:0 auto;
+    max-width: 90%;
+    background-color: rgb(127, 129, 129);
+}
+
+#JB{
+    max-width: 40vw !important; 
+    height: auto !important;
+    
+}
+
+#predict{
+    max-width: 75vw !important; 
+    height: auto !important;
+    
+}
+
+.image_pouce{
+    border-radius:50px;
+    border: 2px solid rgb(12, 12, 12);
+    width: 380px;
+    height: auto;
+    margin-top: 2em;
+}
