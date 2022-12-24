@@ -5,7 +5,7 @@
 
 body {
     background-image: url("https://i1.sndcdn.com/avatars-000642091035-94htfd-t500x500.jpg");
-    background-size: cover
+    background-size: 100vw;
     }
 
 .info
@@ -62,10 +62,40 @@ body {
     border: 2px solid rgb(12, 12, 12);
     width: 380px;
     height: auto;
-    margin-top: 2em;
+    
+}
+
+.phrase{
+    width: 80vw;
+    margin-top: 1em;
+    justify-content: center; 
 }
 
 #image_acceuil {
     margin: 0 auto;
-    width: 90vw;
+    
 }
+
+.flex-container {
+    /* We first create a flex layout context */
+    display: flex;
+    
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+    
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+    
+    padding: 10;
+    margin: 0;
+    list-style: none;
+  }
+
+  .flex-item {
+    margin:2em;
+  }

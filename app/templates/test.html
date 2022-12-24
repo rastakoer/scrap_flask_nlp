@@ -11,16 +11,25 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-
-      {% if predict ==1 %}
-      <div>                           
-        <img class="image_pouce" src="{{ url_for('static', filename='images/p__words_vert.png') }}" alt="pouce vert"/>
-      </div>   
+      {% if longueur_phrase > 0 %}
+          {% if predict ==1 %}
+          <div>                     
+            <h4 class="phrase"><b><u><i> Votre commentaire :<br> </i></u></b>{{ phrase }}</h4>      
+            <img class="image_pouce" src="{{ url_for('static', filename='images/p__words_vert.png') }}" alt="pouce vert"/>
+          </div>   
+          {% else %}
+          <div> 
+            <h4 class="phrase"><b><u><i> Votre commentaire :<br> </i></u></b>{{ phrase }}</h4>     
+            <img class="image_pouce" src="{{ url_for('static', filename='images/p__words_rouge.png')}}" alt="pouce rouge" />
+          </div>   
+          {% endif %}
       {% else %}
-      <div> 
-        <img class="image_pouce" src="{{ url_for('static', filename='images/p__words_rouge.png')}}" alt="pouce rouge" />
-      </div>   
+          <div> 
+            <h4 class="phrase"><b><u><i> Veuillez écrire un commentaire pour voir la prédiction<br> </i></u></b></h4>
+            <img class="image_pouce" src="{{ url_for('static', filename='images/all_words.png')}}" alt="pouce rouge" />
+          </div>
       {% endif %}
+
 </div>
 
 {% endblock %}

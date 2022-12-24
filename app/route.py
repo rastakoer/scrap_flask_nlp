@@ -70,13 +70,15 @@ def index():
 @app.route('/test', methods=['GET', 'POST'])   # == @app.route('/index')
 def test():
     if request.method == "GET":
-        return render_template('test.html')
+        longueur_phrase=0
+        return render_template('test.html',longueur_phrase=longueur_phrase)
 
     if request.method == 'POST':
         phrase=request.form.get('phrase')
+        longueur_phrase = len(phrase)
         standard = Allo_Cine.standardize_phrase(phrase)
         predict = Allo_Cine.predict(standard)
-        return render_template('test.html', predict=predict)
+        return render_template('test.html', predict=predict, phrase=phrase, longueur_phrase=longueur_phrase)
 
         
 
