@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 align="center" class="titre"><b><i>RETOUVEZ LES INFORMATIONS D'UN FILM </i></b></h1>
+
+<form id="predict" method="post">
+    <div class="form-group">
+        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Nom du film" name="film">
+        <button type="submit" class="btn btn-primary">RECHERCHER</button>
+    </div>
+</form>
+{% if requete ==1 %}
+<div class="container container-main-presentation">
+<table class="table_presentation" >
+    
+    <tr >
+     <td rowspan="5">
+        <div>
+            <img class="image_presentation" src="{{ info[0] }}" alt="pouce vert"/>
+        </div>
+     </td>
+     <td ><h4 class="titre">{{ name }}</h4></td>
+    </tr>
+    <tr>
+    <td>{{ info[4]}} </td>
+    </tr>
+    <tr>
+    <td>Date de sortie : {{ info[1]}} </td>
+    </tr>
+    <tr>
+    <td>{{ info[2]}} </td>
+    </tr>
+    <tr>
+    <td> Résumé : {{ info[3]}} </td>
+    </tr>
+    
+
+</table>
+<h4 class="titre">Allo_cine ne permet pas d'obtenir la fiche du film depuis une recherche href="#"</h4>
+<h4>{{ info[5] }}</h4>
+</div>
+{% endif %}    
+
+
+{% endblock %}

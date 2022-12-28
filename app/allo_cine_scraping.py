@@ -77,3 +77,24 @@ class  Allo_Cine :
         vectorisation=vector.transform(corpus_phrase)
         prediction = LReg.predict(vectorisation)
         return prediction
+
+    def scrape_film(name):
+        info=[]
+        url = f"https://www.allocine.fr/rechercher/?q={name}"
+        reponse=requests.get(url)
+        soup = BeautifulSoup(reponse.text,"html.parser")
+        donnees=soup.find_all("div", {"class":"card entity-card entity-card-list cf"})
+        
+        
+        image= donnees[0].find("img").get("data-src")
+        info.append(image)
+        date = donnees[0].find("span", {"class":"date"}).text    
+        info.append(date)
+        acteurs = donnees[0].find("div", {"class":"meta-body-item meta-body-actor"}).text
+        info.append(acteurs)  
+        resume =  donnees[0].find("div", {"class":"synopsis"}).text   
+        info.append(resume)
+        realisateur = donnees[0].find("div", {"class":"meta-body-item meta-body-direction"}).text
+        info.append(realisateur)
+
+        return info

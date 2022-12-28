@@ -5,7 +5,7 @@
 # taper : ctrl + maj + p et select "Developer: reload window"
 
 
-from app import app, db
+from app import app
 
 TESTER_RECUPERATION_CONFIG_JSON = False
 

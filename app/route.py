@@ -84,7 +84,7 @@ def test():
 
     
 #----------------------------------------------------------------
-# AVATAR
+# COMMENTAIRE D'AVATAR
 #----------------------------------------------------------------    
 @app.route('/avis', methods=['GET', 'POST'])  
 def avis():
@@ -104,10 +104,21 @@ def avis():
             return render_template('avis.html')
 
 
-          
-    
-        
+#----------------------------------------------------------------
+# SCRAPPING
+#----------------------------------------------------------------         
+@app.route('/scrapping', methods=["GET", "POST"])   # == @app.route('/index')
+def scrapping():  
+    if request.method == "GET": 
+        requete=0
+        return render_template('scrapping.html',requete=requete)
 
+    if request.method == 'POST':
+        requete=1
+        name=request.form.get('film')
+        info = Allo_Cine.scrape_film(name)
+        
+        return render_template('scrapping.html', info=info, name=name, requete=requete)
     
 
 

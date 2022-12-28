@@ -45,6 +45,11 @@ body {
     background-color: rgb(127, 129, 129);
 }
 
+.container-main-presentation{
+    margin:0 auto;
+    max-width: 50%;
+}
+
 #JB{
     max-width: 40vw !important; 
     height: auto !important;
@@ -62,7 +67,17 @@ body {
     border: 2px solid rgb(12, 12, 12);
     width: 380px;
     height: auto;
-    
+}
+.image_presentation{
+    border-radius:50px;
+    border: 2px solid rgb(12, 12, 12);
+    width: auto;
+    height: 20vw;
+}
+
+.table_presentation{
+    width: 50vw;
+    height: auto;
 }
 
 .phrase{
@@ -75,6 +90,7 @@ body {
     margin: 0 auto;
     
 }
+
 
 .flex-container {
     /* We first create a flex layout context */
