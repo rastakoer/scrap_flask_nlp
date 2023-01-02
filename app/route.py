@@ -65,7 +65,7 @@ def index():
             return redirect(url_for("index"), error=e)
 
 #----------------------------------------------------------------
-# TESLA
+# TEST
 #----------------------------------------------------------------
 @app.route('/test', methods=['GET', 'POST'])   # == @app.route('/index')
 def test():
@@ -119,6 +119,9 @@ def scrapping():
         info = Allo_Cine.scrape_film(name)
         
         return render_template('scrapping.html', info=info, name=name, requete=requete)
+
+
+
     
 
 
